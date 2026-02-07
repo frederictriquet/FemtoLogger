@@ -1,4 +1,4 @@
-import type { LogEntry, Transport, TelegramTransportOptions } from '../types';
+import type { LogEntry, LogLevel, Transport, TelegramTransportOptions } from '../types';
 
 /**
  * Transport pour envoyer des logs vers Telegram via Bot API.
@@ -17,16 +17,16 @@ import type { LogEntry, Transport, TelegramTransportOptions } from '../types';
 export class TelegramTransport implements Transport {
   private readonly apiUrl: string;
   private readonly chatId: string | number;
-  private readonly parseMode: string;
+  private readonly parseMode: 'HTML' | 'Markdown' | 'MarkdownV2';
   private readonly disableWebPagePreview: boolean;
 
   constructor(options: TelegramTransportOptions) {
     // Validation des paramètres obligatoires
     if (!options.token) {
-      throw new Error('TelegramTransport: token est obligatoire');
+      throw new Error('TelegramTransport: token is required');
     }
-    if (!options.chatId) {
-      throw new Error('TelegramTransport: chatId est obligatoire');
+    if (options.chatId === undefined || options.chatId === '') {
+      throw new Error('TelegramTransport: chatId is required');
     }
 
     this.apiUrl = `https://api.telegram.org/bot${options.token}/sendMessage`;
@@ -90,7 +90,7 @@ export class TelegramTransport implements Transport {
     const emoji = this.getLevelEmoji(entry.level);
 
     // Ligne principale : [EMOJI] LEVEL | Message
-    let text = `${emoji} ${entry.level.toUpperCase()} | ${entry.message}`;
+    let text = `${emoji} ${entry.level.toUpperCase()} | ${this.escapeHtml(entry.message)}`;
 
     // Ajouter metadata si présente
     if (entry.metadata && Object.keys(entry.metadata).length > 0) {
@@ -111,7 +111,7 @@ export class TelegramTransport implements Transport {
    * @param level - Niveau du log
    * @returns Emoji représentant le niveau
    */
-  private getLevelEmoji(level: string): string {
+  private getLevelEmoji(level: LogLevel): string {
     switch (level) {
       case 'info':
         return '🔵';

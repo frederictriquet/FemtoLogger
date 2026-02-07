@@ -25,7 +25,7 @@ export class FemtoLogger {
 
   constructor(options: LoggerOptions) {
     if (!options.transports || options.transports.length === 0) {
-      throw new Error('FemtoLogger: Au moins un transport doit être fourni');
+      throw new Error('FemtoLogger: at least one transport is required');
     }
 
     this.transports = options.transports;

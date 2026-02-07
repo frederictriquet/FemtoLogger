@@ -22,7 +22,7 @@ describe('FemtoLogger', () => {
     it('should throw error when no transports provided', () => {
       expect(() => {
         new FemtoLogger({ transports: [] });
-      }).toThrow('Au moins un transport doit être fourni');
+      }).toThrow('at least one transport is required');
     });
 
     it('should use default level "info" when not specified', async () => {

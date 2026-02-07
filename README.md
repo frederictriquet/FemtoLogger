@@ -176,12 +176,11 @@ FemtoLogger (core)
 
 ## Roadmap 🗺️
 
+- [x] ~~Tests unitaires~~ — 64 tests, 97.67% couverture
 - [ ] Transport Slack
 - [ ] Transport Discord
 - [ ] Option de batching (regrouper plusieurs logs)
 - [ ] Rate limiting intégré
-- [ ] Tests unitaires
-- [ ] Exemples avancés
 
 ## Contribution 🤝
 

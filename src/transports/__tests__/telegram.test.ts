@@ -31,7 +31,7 @@ describe('TelegramTransport', () => {
           token: '',
           chatId: '123',
         });
-      }).toThrow('token est obligatoire');
+      }).toThrow('token is required');
     });
 
     it('should throw error when chatId is missing', () => {
@@ -40,7 +40,7 @@ describe('TelegramTransport', () => {
           token: 'test-token',
           chatId: '',
         });
-      }).toThrow('chatId est obligatoire');
+      }).toThrow('chatId is required');
     });
 
     it('should accept numeric chatId', () => {
