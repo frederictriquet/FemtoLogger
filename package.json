@@ -1,6 +1,6 @@
 {
   "name": "femtologger",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lightweight, extensible event logger for TypeScript server apps",
   "keywords": [
     "logger",
