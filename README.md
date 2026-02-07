@@ -1,5 +1,11 @@
 # FemtoLogger 🪶
 
+[![CI/CD](https://github.com/votre-username/FemtoLogger/actions/workflows/ci.yml/badge.svg)](https://github.com/votre-username/FemtoLogger/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue.svg)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18-green.svg)](https://nodejs.org/)
+[![Coverage](https://img.shields.io/badge/Coverage-97.67%25-brightgreen.svg)](./TEST_COVERAGE.md)
+
 > Lightweight, extensible event logger for TypeScript server apps
 
 FemtoLogger est un logger minimaliste conçu pour envoyer des événements applicatifs vers des services de messagerie (Telegram, Slack, Discord, etc.) avec une architecture modulaire et extensible.
