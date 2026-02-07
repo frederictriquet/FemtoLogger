@@ -29,6 +29,9 @@ jobs:
       - name: Type check
         run: npm run typecheck
 
+      - name: Test
+        run: npm test
+
       - name: Build
         run: npm run build
 
@@ -66,20 +69,22 @@ jobs:
         run: npm run build
 
       - name: Configure package for GitHub Packages
+        env:
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.repository }}
         run: |
-          # Ajouter le scope au nom du package pour GitHub Packages
-          node -e "
-            const pkg = require('./package.json');
-            pkg.name = '@${{ github.repository_owner }}/${pkg.name}';
+          node -e '
+            const pkg = require("./package.json");
+            pkg.name = "@" + process.env.OWNER + "/" + pkg.name;
             pkg.repository = {
-              type: 'git',
-              url: 'git+https://github.com/${{ github.repository }}.git'
+              type: "git",
+              url: "git+https://github.com/" + process.env.REPO + ".git"
             };
             pkg.publishConfig = {
-              registry: 'https://npm.pkg.github.com'
+              registry: "https://npm.pkg.github.com"
             };
-            require('fs').writeFileSync('./package.json', JSON.stringify(pkg, null, 2));
-          "
+            require("fs").writeFileSync("./package.json", JSON.stringify(pkg, null, 2));
+          '
 
       - name: Publish to GitHub Packages
         run: npm publish
