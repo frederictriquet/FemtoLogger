@@ -21,23 +21,9 @@ FemtoLogger est un logger minimaliste conçu pour envoyer des événements appli
 
 ## Installation 📦
 
-### Option 1 : Depuis GitHub Packages (recommandé)
-
 ```bash
-# 1. Configurer npm pour utiliser GitHub Packages
-echo "@frederictriquet:registry=https://npm.pkg.github.com" >> .npmrc
-
-# 2. Installer le package
-npm install @frederictriquet/femtologger
+npm install femtologger
 ```
-
-### Option 2 : Depuis GitHub directement
-
-```bash
-npm install github:frederictriquet/femtologger
-```
-
-**Note** : Remplacez `frederictriquet` par votre nom d'utilisateur GitHub.
 
 ## Utilisation rapide 🚀
 
