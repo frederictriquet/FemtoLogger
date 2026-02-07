@@ -10,13 +10,9 @@ import type {
 describe('Type definitions', () => {
   describe('LogLevel', () => {
     it('should accept valid log levels', () => {
-      const info: LogLevel = 'info';
-      const warn: LogLevel = 'warn';
-      const error: LogLevel = 'error';
-
-      expectTypeOf(info).toEqualTypeOf<LogLevel>();
-      expectTypeOf(warn).toEqualTypeOf<LogLevel>();
-      expectTypeOf(error).toEqualTypeOf<LogLevel>();
+      expectTypeOf<'info'>().toMatchTypeOf<LogLevel>();
+      expectTypeOf<'warn'>().toMatchTypeOf<LogLevel>();
+      expectTypeOf<'error'>().toMatchTypeOf<LogLevel>();
     });
   });
 
@@ -149,13 +145,9 @@ describe('Type definitions', () => {
     });
 
     it('should restrict parseMode to valid values', () => {
-      const html: TelegramTransportOptions['parseMode'] = 'HTML';
-      const markdown: TelegramTransportOptions['parseMode'] = 'Markdown';
-      const markdownV2: TelegramTransportOptions['parseMode'] = 'MarkdownV2';
-
-      expectTypeOf(html).toEqualTypeOf<'HTML' | 'Markdown' | 'MarkdownV2' | undefined>();
-      expectTypeOf(markdown).toEqualTypeOf<'HTML' | 'Markdown' | 'MarkdownV2' | undefined>();
-      expectTypeOf(markdownV2).toEqualTypeOf<'HTML' | 'Markdown' | 'MarkdownV2' | undefined>();
+      expectTypeOf<'HTML'>().toMatchTypeOf<TelegramTransportOptions['parseMode']>();
+      expectTypeOf<'Markdown'>().toMatchTypeOf<TelegramTransportOptions['parseMode']>();
+      expectTypeOf<'MarkdownV2'>().toMatchTypeOf<TelegramTransportOptions['parseMode']>();
     });
 
     it('should allow optional disableWebPagePreview', () => {

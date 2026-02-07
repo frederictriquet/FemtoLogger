@@ -1,6 +1,6 @@
 # FemtoLogger 🪶
 
-[![CI/CD](https://github.com/votre-username/FemtoLogger/actions/workflows/ci.yml/badge.svg)](https://github.com/votre-username/FemtoLogger/actions/workflows/ci.yml)
+[![CI/CD](https://github.com/frederictriquet/FemtoLogger/actions/workflows/ci.yml/badge.svg)](https://github.com/frederictriquet/FemtoLogger/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6-blue.svg)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18-green.svg)](https://nodejs.org/)
@@ -25,19 +25,19 @@ FemtoLogger est un logger minimaliste conçu pour envoyer des événements appli
 
 ```bash
 # 1. Configurer npm pour utiliser GitHub Packages
-echo "@votre-username:registry=https://npm.pkg.github.com" >> .npmrc
+echo "@frederictriquet:registry=https://npm.pkg.github.com" >> .npmrc
 
 # 2. Installer le package
-npm install @votre-username/femtologger
+npm install @frederictriquet/femtologger
 ```
 
 ### Option 2 : Depuis GitHub directement
 
 ```bash
-npm install github:votre-username/femtologger
+npm install github:frederictriquet/femtologger
 ```
 
-**Note** : Remplacez `votre-username` par votre nom d'utilisateur GitHub.
+**Note** : Remplacez `frederictriquet` par votre nom d'utilisateur GitHub.
 
 ## Utilisation rapide 🚀
 
