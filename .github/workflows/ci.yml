@@ -37,9 +37,9 @@ jobs:
 
       - name: Check build artifacts
         run: |
-          test -f dist/index.js || exit 1
-          test -f dist/index.mjs || exit 1
-          test -f dist/index.d.ts || exit 1
+          test -f dist/index.js || { echo "❌ Missing dist/index.js (CJS)"; exit 1; }
+          test -f dist/index.mjs || { echo "❌ Missing dist/index.mjs (ESM)"; exit 1; }
+          test -f dist/index.d.ts || { echo "❌ Missing dist/index.d.ts (types)"; exit 1; }
           echo "✅ All build artifacts present"
 
   publish:
