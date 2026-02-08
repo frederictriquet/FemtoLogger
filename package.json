@@ -1,6 +1,6 @@
 {
   "name": "@frederictriquet/femtologger",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Lightweight, extensible event logger for TypeScript server apps",
   "keywords": [
     "logger",
