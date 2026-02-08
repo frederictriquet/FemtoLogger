@@ -258,6 +258,24 @@ describe('TelegramTransport', () => {
       expect(body.text).not.toContain('<script>');
     });
 
+    it('should preserve HTML in message for formatting', async () => {
+      mockFetch.mockResolvedValue({
+        ok: true,
+        text: async () => '{}',
+      });
+
+      const transport = new TelegramTransport({
+        token: 'test-token',
+        chatId: '123',
+      });
+
+      const logEntry = createLogEntry('info', '<b>ETL Done</b>: import-actors');
+      await transport.send(logEntry);
+
+      const body = JSON.parse(mockFetch.mock.calls[0][1].body);
+      expect(body.text).toContain('<b>ETL Done</b>');
+    });
+
     it('should send to correct chat_id', async () => {
       mockFetch.mockResolvedValue({
         ok: true,

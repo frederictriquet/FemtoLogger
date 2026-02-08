@@ -90,7 +90,7 @@ export class TelegramTransport implements Transport {
     const emoji = this.getLevelEmoji(entry.level);
 
     // Ligne principale : [EMOJI] LEVEL | Message
-    let text = `${emoji} ${entry.level.toUpperCase()} | ${this.escapeHtml(entry.message)}`;
+    let text = `${emoji} ${entry.level.toUpperCase()} | ${entry.message}`;
 
     // Ajouter metadata si présente
     if (entry.metadata && Object.keys(entry.metadata).length > 0) {
