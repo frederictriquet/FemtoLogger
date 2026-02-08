@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-npm install femtologger
+npm install @frederictriquet/femtologger
 ```
 
 ## Required env vars
@@ -18,7 +18,7 @@ Make sure these are loaded (via dotenv, framework config, or process env).
 ## Usage
 
 ```typescript
-import { FemtoLogger, TelegramTransport } from 'femtologger';
+import { FemtoLogger, TelegramTransport } from '@frederictriquet/femtologger';
 
 const logger = new FemtoLogger({
   transports: [
@@ -59,7 +59,7 @@ Methods: `logger.info(message, metadata?)`, `logger.warn(message, metadata?)`, `
 Implement the `Transport` interface:
 
 ```typescript
-import type { Transport, LogEntry } from 'femtologger';
+import type { Transport, LogEntry } from '@frederictriquet/femtologger';
 
 class MyTransport implements Transport {
   async send(entry: LogEntry): Promise<void> {

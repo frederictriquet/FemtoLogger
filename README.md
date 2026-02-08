@@ -22,7 +22,7 @@ FemtoLogger est un logger minimaliste conçu pour envoyer des événements appli
 ## Installation 📦
 
 ```bash
-npm install femtologger
+npm install @frederictriquet/femtologger
 ```
 
 ## Utilisation rapide 🚀
@@ -30,7 +30,7 @@ npm install femtologger
 ### Configuration basique avec Telegram
 
 ```typescript
-import { FemtoLogger, TelegramTransport } from 'femtologger';
+import { FemtoLogger, TelegramTransport } from '@frederictriquet/femtologger';
 
 const logger = new FemtoLogger({
   transports: [
@@ -50,7 +50,7 @@ await logger.error('Database connection failed', { error: err.message });
 ### Configuration multi-destinations
 
 ```typescript
-import { FemtoLogger, TelegramTransport } from 'femtologger';
+import { FemtoLogger, TelegramTransport } from '@frederictriquet/femtologger';
 
 const logger = new FemtoLogger({
   transports: [
@@ -125,7 +125,7 @@ new TelegramTransport(options: TelegramTransportOptions)
 Créer un nouveau transport est trivial — une seule interface à implémenter :
 
 ```typescript
-import type { Transport, LogEntry } from 'femtologger';
+import type { Transport, LogEntry } from '@frederictriquet/femtologger';
 
 export class SlackTransport implements Transport {
   constructor(private webhookUrl: string) {}
